@@ -1,0 +1,71 @@
+.header {
+  display: block;
+  width: 100%;
+  padding: 50px 0;
+
+  background-color: rgb(228, 32, 97);
+}
+
+.header .header-text {
+  text-align: center;
+  font-size: 200%;
+}
+
+.team {
+  margin: 60px 0;
+
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  column-gap: 20px;
+  row-gap: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.card {
+  width: 20%;
+}
+
+.card .card-header {
+  background-color: rgb(17, 119, 209);
+  padding: 30px 0;
+  text-align: center;
+  color: aliceblue;
+
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+
+.card .card-header h1 {
+  font-size: 200%;
+}
+
+.card .card-header h2 {
+  font-size: 150%;
+}
+
+.card .card-content {
+  padding: 50px 30px;
+  border: 1px grey solid;
+}
+
+.card .card-content .card-list {
+  list-style: none;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.card-list .card-list-item {
+  padding: 10px;
+  border: 1px grey solid;
+}
+
+.card-list-item a,
+.card-list-item a:active,
+.card-list-item a:visited {
+  text-decoration: none;
+  color: blue;
+}
