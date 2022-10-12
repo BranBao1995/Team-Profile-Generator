@@ -54,69 +54,14 @@ function addEngineer() {
         response.github
       );
       if (response.add === "Engineer") {
-        //     let markUp = `
-        // <div class="card">
-        //     <div class="card-header">
-        //       ${engineer.getName()}
-        //       ${engineer.getRole()}
-        //     </div>
-        //     <div class="card-content">
-        //       <ul class="card-list">
-        //         ${engineer.getId()}
-        //         ${engineer.getEmail()}
-        //         ${engineer.getGithub()}
-        //       </ul>
-        //     </div>
-        //   </div>
-        //     `;
         appendToFile("./dist/index.html", engineer.getMarkUp());
         addEngineer();
       } else if (response.add === "Intern") {
-        //     let markUp = `
-        // <div class="card">
-        //     <div class="card-header">
-        //       ${engineer.getName()}
-        //       ${engineer.getRole()}
-        //     </div>
-        //     <div class="card-content">
-        //       <ul class="card-list">
-        //         ${engineer.getId()}
-        //         ${engineer.getEmail()}
-        //         ${engineer.getGithub()}
-        //       </ul>
-        //     </div>
-        //   </div>
-        //     `;
-        // appendToFile("./dist/index.html", markUp);
         appendToFile("./dist/index.html", engineer.getMarkUp());
         addIntern();
       } else {
-        //         let markUp = `
-        //     <div class="card">
-        //         <div class="card-header">
-        //           ${engineer.getName()}
-        //           ${engineer.getRole()}
-        //         </div>
-        //         <div class="card-content">
-        //           <ul class="card-list">
-        //             ${engineer.getId()}
-        //             ${engineer.getEmail()}
-        //             ${engineer.getGithub()}
-        //           </ul>
-        //         </div>
-        //       </div>
-        //     </section>
-        //   </body>
-        // </html>
-        //         `;
-        // appendToFile("./dist/index.html", markUp);
         let markUp = `
-        ${engineer.getMarkUp()}
-    </section>
-  </body>
-</html>
-
-        `;
+        ${engineer.getMarkUp()}</section></body></html>`;
         appendToFile("./dist/index.html", markUp);
         console.log("Done!");
       }
@@ -145,70 +90,14 @@ function addIntern() {
         response.school
       );
       if (response.add === "Engineer") {
-        //     let markUp = `
-        // <div class="card">
-        //     <div class="card-header">
-        //       ${intern.getName()}
-        //       ${intern.getRole()}
-        //     </div>
-        //     <div class="card-content">
-        //       <ul class="card-list">
-        //         ${intern.getId()}
-        //         ${intern.getEmail()}
-        //         ${intern.getSchool()}
-        //       </ul>
-        //     </div>
-        //   </div>
-        //     `;
-        // appendToFile("./dist/index.html", markUp);
         appendToFile("./dist/index.html", intern.getMarkUp());
         addEngineer();
       } else if (response.add === "Intern") {
-        //     let markUp = `
-        // <div class="card">
-        //     <div class="card-header">
-        //       ${intern.getName()}
-        //       ${intern.getRole()}
-        //     </div>
-        //     <div class="card-content">
-        //       <ul class="card-list">
-        //         ${intern.getId()}
-        //         ${intern.getEmail()}
-        //         ${intern.getSchool()}
-        //       </ul>
-        //     </div>
-        //   </div>
-        //     `;
-        // appendToFile("./dist/index.html", markUp);
         appendToFile("./dist/index.html", intern.getMarkUp());
         addIntern();
       } else {
-        //         let markUp = `
-        //     <div class="card">
-        //         <div class="card-header">
-        //           ${intern.getName()}
-        //           ${intern.getRole()}
-        //         </div>
-        //         <div class="card-content">
-        //           <ul class="card-list">
-        //             ${intern.getId()}
-        //             ${intern.getEmail()}
-        //             ${intern.getSchool()}
-        //           </ul>
-        //         </div>
-        //       </div>
-        //     </section>
-        //   </body>
-        // </html>
-        //         `;
-        // appendToFile("./dist/index.html", markUp);
         let markUp = `
-        ${intern.getMarkUp()}
-    </section>
-  </body>
-</html>
-
-        `;
+        ${intern.getMarkUp()}</section></body></html>`;
         appendToFile("./dist/index.html", markUp);
         console.log("Done!");
       }
@@ -237,123 +126,14 @@ function init() {
         response.office
       );
       if (response.add === "Engineer") {
-        //         let markUp = `
-        // <!DOCTYPE html>
-        // <html lang="en">
-        //   <head>
-        //     <meta charset="UTF-8" />
-        //     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        //     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        //     <link rel="stylesheet" href="./css/reset.css" />
-        //     <link rel="stylesheet" href="./css/style.css" />
-        //     <title>Team Profile Generator</title>
-        //   </head>
-        //   <body>
-        //     <header class="header">
-        //       <h1 class="header-text">My Team</h1>
-        //     </header>
-
-        //     <section class="team">
-        //         <div class="card">
-        //         <div class="card-header">
-        //           ${manager.getName()}
-        //           ${manager.getRole()}
-        //         </div>
-        //         <div class="card-content">
-        //           <ul class="card-list">
-        //             ${manager.getId()}
-        //             ${manager.getEmail()}
-        //             <li class="card-list-item">
-        //               Office: ${manager.officeNumber}
-        //             </li>
-        //           </ul>
-        //         </div>
-        //       </div>
-        //         `;
-        // writeToFile("./dist/index.html", markUp);
         writeToFile("./dist/index.html", manager.getMarkUp());
         addEngineer();
       } else if (response.add === "Intern") {
-        //         let markUp = `
-        // <!DOCTYPE html>
-        // <html lang="en">
-        //   <head>
-        //     <meta charset="UTF-8" />
-        //     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        //     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        //     <link rel="stylesheet" href="./css/reset.css" />
-        //     <link rel="stylesheet" href="./css/style.css" />
-        //     <title>Team Profile Generator</title>
-        //   </head>
-        //   <body>
-        //     <header class="header">
-        //       <h1 class="header-text">My Team</h1>
-        //     </header>
-
-        //     <section class="team">
-        //         <div class="card">
-        //         <div class="card-header">
-        //           ${manager.getName()}
-        //           ${manager.getRole()}
-        //         </div>
-        //         <div class="card-content">
-        //           <ul class="card-list">
-        //             ${manager.getId()}
-        //             ${manager.getEmail()}
-        //             <li class="card-list-item">
-        //               Office: ${manager.officeNumber}
-        //             </li>
-        //           </ul>
-        //         </div>
-        //       </div>
-        //         `;
-        // writeToFile("./dist/index.html", markUp);
         writeToFile("./dist/index.html", manager.getMarkUp());
         addIntern();
       } else {
-        //         let markUp = `
-        // <!DOCTYPE html>
-        // <html lang="en">
-        //   <head>
-        //     <meta charset="UTF-8" />
-        //     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-        //     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        //     <link rel="stylesheet" href="./css/reset.css" />
-        //     <link rel="stylesheet" href="./css/style.css" />
-        //     <title>Team Profile Generator</title>
-        //   </head>
-        //   <body>
-        //     <header class="header">
-        //       <h1 class="header-text">My Team</h1>
-        //     </header>
-
-        //     <section class="team">
-        //         <div class="card">
-        //         <div class="card-header">
-        //           ${manager.getName()}
-        //           ${manager.getRole()}
-        //         </div>
-        //         <div class="card-content">
-        //           <ul class="card-list">
-        //             ${manager.getId()}
-        //             ${manager.getEmail()}
-        //             <li class="card-list-item">
-        //               Office: ${manager.officeNumber}
-        //             </li>
-        //           </ul>
-        //         </div>
-        //       </div>
-        //     </section>
-        //   </body>
-        // </html>
-        //         `;
         let markUp = `
-        ${manager.getMarkUp()}
-    </section>
-  </body>
-</html>
-
-        `;
+        ${manager.getMarkUp()}</section></body></html>`;
         writeToFile("./dist/index.html", markUp);
         console.log("Done!");
       }
