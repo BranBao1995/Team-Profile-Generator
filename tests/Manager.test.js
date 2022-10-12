@@ -1,19 +1,19 @@
 const Manager = require("../lib/Manager");
 
 describe("Manager", () => {
-  // Test for all use cases when initializing a new Manager object
   describe("Initialization", () => {
+    // check to see if an object can be properly intialized with matching properties.
     it("should create an object with a name, id, email, office number if provided valid arguments", () => {
       const manager = new Manager("Brandon", "1", "abc@gmail.com", "318");
 
-      // Verify that the new object has the correct properties
       expect(manager.name).toEqual("Brandon");
       expect(manager.id).toEqual("1");
       expect(manager.email).toEqual("abc@gmail.com");
       expect(manager.officeNumber).toEqual("318");
     });
 
-    it("should return the correct mark up when the getName() method is called", () => {
+    // check if all methods provided by "Employee" work as expected.
+    it("should return the correct mark up when methods are called", () => {
       const manager = new Manager("Brandon", "1", "abc@gmail.com", "318");
       nameMarkUp = `<h1 class="name">Brandon</h1>`;
       idMarkUp = `<li class="card-list-item">ID: 1</li>`;
@@ -29,6 +29,7 @@ describe("Manager", () => {
       expect(manager.getMarkUp()).toEqual(totalMarkUp);
     });
 
+    // Check for error
     it("should throw an error if provided no arguments", () => {
       const callback = () => new Manager();
 

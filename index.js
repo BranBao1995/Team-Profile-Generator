@@ -1,11 +1,15 @@
+// Import classes
 const Employee = require("./lib/Employee");
 const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 
+// Import file library
 const fs = require("fs");
+// Import Inquirer
 const inquirer = require("inquirer");
 
+// Choices for adding an employee when prompted
 const chooseRole = ["Engineer", "Intern", "Finish"];
 
 const questions = [
@@ -24,14 +28,17 @@ const questions = [
   "Do you want to add more employee?",
 ];
 
+// Everytime this program is run, overwrite the old file.
 function writeToFile(fileName, data) {
   fs.writeFile(fileName, data, (err) => {});
 }
 
+// When user is promted to add a new employee, append data to the file.
 function appendToFile(fileName, data) {
   fs.appendFile(fileName, data, (err) => {});
 }
 
+// logic for adding an engineer
 function addEngineer() {
   inquirer
     .prompt([
@@ -51,15 +58,18 @@ function addEngineer() {
         response.name,
         response.identification,
         response.email,
-        response.github
+        response.github // an engineer also has his/her Github info available
       );
       if (response.add === "Engineer") {
+        // if user selects to add more employees, append existing data to the file first
         appendToFile("./dist/index.html", engineer.getMarkUp());
         addEngineer();
       } else if (response.add === "Intern") {
+        // if user selects to add more employees, append existing data to the file first
         appendToFile("./dist/index.html", engineer.getMarkUp());
         addIntern();
       } else {
+        // if user decides not to add more employees, finish appending data to the file by also adding the closing tags to complete the HTML file
         let markUp = `
         ${engineer.getMarkUp()}</section></body></html>`;
         appendToFile("./dist/index.html", markUp);
@@ -68,6 +78,7 @@ function addEngineer() {
     });
 }
 
+// logic for adding an intern
 function addIntern() {
   inquirer
     .prompt([
@@ -90,12 +101,15 @@ function addIntern() {
         response.school
       );
       if (response.add === "Engineer") {
+        // if user selects to add more employees, append existing data to the file first
         appendToFile("./dist/index.html", intern.getMarkUp());
         addEngineer();
       } else if (response.add === "Intern") {
+        // if user selects to add more employees, append existing data to the file first
         appendToFile("./dist/index.html", intern.getMarkUp());
         addIntern();
       } else {
+        // if user decides not to add more employees, finish appending data to the file by also adding the closing tags to complete the HTML file
         let markUp = `
         ${intern.getMarkUp()}</section></body></html>`;
         appendToFile("./dist/index.html", markUp);
@@ -119,6 +133,7 @@ function init() {
       },
     ])
     .then((response) => {
+      // at least has to add a manager, it is a minimum requirement
       const manager = new Manager(
         response.name,
         response.identification,
@@ -126,12 +141,15 @@ function init() {
         response.office
       );
       if (response.add === "Engineer") {
+        // if user selects to add more employees, append existing data to the file first
         writeToFile("./dist/index.html", manager.getMarkUp());
         addEngineer();
       } else if (response.add === "Intern") {
+        // if user selects to add more employees, append existing data to the file first
         writeToFile("./dist/index.html", manager.getMarkUp());
         addIntern();
       } else {
+        // if user decides not to add more employees, finish appending data to the file by also adding the closing tags to complete the HTML file
         let markUp = `
         ${manager.getMarkUp()}</section></body></html>`;
         writeToFile("./dist/index.html", markUp);

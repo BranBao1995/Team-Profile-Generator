@@ -1,19 +1,18 @@
 const Intern = require("../lib/Intern");
 
 describe("Intern", () => {
-  // Test for all use cases when initializing a new Intern object
   describe("Initialization", () => {
+    // check to see if an object can be properly intialized with matching properties.
     it("should create an object with a name, id, email, school if provided valid arguments", () => {
       const intern = new Intern("Brandon", "1", "abc@gmail.com", "UofT");
-
-      // Verify that the new object has the correct properties
       expect(intern.name).toEqual("Brandon");
       expect(intern.id).toEqual("1");
       expect(intern.email).toEqual("abc@gmail.com");
       expect(intern.school).toEqual("UofT");
     });
 
-    it("should return the correct mark up when the getName() method is called", () => {
+    // check if all methods provided by "Employee" work as expected.
+    it("should return the correct mark up when methods are called", () => {
       const intern = new Intern("Brandon", "1", "abc@gmail.com", "UofT");
       nameMarkUp = `<h1 class="name">Brandon</h1>`;
       idMarkUp = `<li class="card-list-item">ID: 1</li>`;
@@ -29,6 +28,7 @@ describe("Intern", () => {
       expect(intern.getMarkUp()).toEqual(totalMarkUp);
     });
 
+    // Check for error
     it("should throw an error if provided no arguments", () => {
       const callback = () => new Intern();
 

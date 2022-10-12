@@ -1,8 +1,8 @@
 const Engineer = require("../lib/Engineer");
 
 describe("Engineer", () => {
-  // Test for all use cases when initializing a new Engineer object
   describe("Initialization", () => {
+    // check to see if an object can be properly intialized with matching properties.
     it("should create an object with a name, id, email, github if provided valid arguments", () => {
       const engineer = new Engineer(
         "Brandon",
@@ -10,15 +10,14 @@ describe("Engineer", () => {
         "abc@gmail.com",
         "BranBao1995"
       );
-
-      // Verify that the new object has the correct properties
       expect(engineer.name).toEqual("Brandon");
       expect(engineer.id).toEqual("1");
       expect(engineer.email).toEqual("abc@gmail.com");
       expect(engineer.github).toEqual("BranBao1995");
     });
 
-    it("should return the correct mark up when the getName() method is called", () => {
+    // check if all methods provided by "Employee" work as expected.
+    it("should return the correct mark up when methods are called", () => {
       const engineer = new Engineer(
         "Brandon",
         "1",
@@ -39,6 +38,7 @@ describe("Engineer", () => {
       expect(engineer.getMarkUp()).toEqual(totalMarkUp);
     });
 
+    // Check for error
     it("should throw an error if provided no arguments", () => {
       const callback = () => new Engineer();
 
